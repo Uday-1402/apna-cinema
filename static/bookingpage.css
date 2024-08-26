@@ -1,0 +1,226 @@
+* {
+  margin: none;
+  border: none;
+  background-color: none;
+
+}
+
+
+.nav-item button{
+  background-color: black;
+}
+#allInfo{
+  display: none;
+}
+.site-footer{
+  color: rgb(233, 165, 39);
+}
+.container
+{
+  margin: 2%;
+}
+.fa {
+  color:rgb(233, 165, 39);
+  margin-right:8% ;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+#twittericon:hover{
+  color: #00aced;
+
+}
+#instagramicon:hover{
+  color:rgb(202, 14, 139);
+
+}
+#youtubeicon:hover{
+  color:rgb(255, 4, 4);
+
+}
+#facebookicon:hover{
+  color:whitesmoke;
+
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: black;
+}
+
+
+footer {
+  margin-top: auto;
+  padding-top: 2%;
+}
+
+.seat {
+  min-height: 140vh;
+  width: 100%;
+  display: block;
+  padding-top: 4%;
+  margin: auto;
+}
+
+.selectSection {
+  height: 100%;
+  width: 60%;
+  /* background-color: rgba(0, 5, 44, 0.714); */
+  margin: auto;
+  padding-top:5%;
+  padding-left: 2%;
+  padding-bottom: 3%;
+}
+
+select {
+  display: inline;
+  width:30%;
+  margin-right: 2%;
+  height:5vh;
+  background-color: black;
+  color: rgb(233, 165, 39);
+  border: 2px solid rgb(233, 165, 39);
+  border-radius: 2%;
+}
+
+select:focus{
+  background-color: rgb(233, 165, 39);
+  color: black;
+  border-color: none;
+
+}
+select:hover{
+  cursor: pointer ;
+  background-color: rgb(233, 165, 39);
+  color: black;
+}
+
+
+
+
+/* seat image */
+table{
+  margin: auto;
+  margin-top: 5%;
+}
+tbody{
+  color: white;
+  background-color: none;
+}
+
+.seatImage {
+  width:100%;
+  height: 2rem;
+}
+.table td{
+  padding: 0rem;
+  border: none;
+  column-gap: 1%;
+  height:50%;
+}
+.table tr{
+  height:6vh;
+}
+.stair{
+  column-width:2rem;
+}
+.table th{
+  padding: 0rem;
+  border: none;
+  height:50%;
+}
+.screenImage{
+  margin-top: 2%;
+  width: 100%;
+  height: 5vh;
+}
+
+.serialNo{
+  text-align: center;
+}
+
+
+.seatType{
+  color: white;
+  width:31%;
+  height:7vh;
+  display: inline-block;
+}
+.seatType h2{
+  display: inline-block;
+}
+.seatInfo{
+  margin-top: 4%;
+}
+.seatType img{
+  width:40%;
+  height:100%;
+}
+.selectedSeat{
+  width:40%;
+  padding-top: 1%;
+  position: absolute;
+  
+}
+.selectedSeat h4{
+  color: white;
+  display: inline;
+}
+
+
+
+
+.seatDetail{
+  width:70%;
+  min-height:9vh;
+  max-height: 12vh;
+  margin-left: 12%;
+  
+  background-color: rgb(137, 205, 37);
+  padding-top: 1%;
+  padding-left:1% ;
+  padding-right: 1%;
+  position: fixed !important;
+  bottom: 3% !important;
+  z-index: 1100;
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+}
+#selseatno{
+  display: inline;
+}
+#paymentInfo{
+  padding-top: 0.5%;
+  width:20%;
+  display:inline;
+}
+#paymentInfo p,#selseatno p{
+  display: inline;
+}
+.payBtn{
+  display: inline;
+  width: 10%;
+  position: fixed !important;
+  bottom: 3%;
+  right: 6% !important;
+  z-index: 1100;
+}
+#payImage{
+  width:53%;
+}
+
+
+.trailer{
+  margin:2%;
+  box-shadow: 0 0 20px rgb(233, 165, 39);
+  margin-left:4% ;
+
+}
+
+
+

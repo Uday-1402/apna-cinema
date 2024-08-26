@@ -1,0 +1,204 @@
+* {
+    margin: none;
+    border: none;
+    background-color: black;
+}
+
+
+.restbody{
+    width:70%;
+    float: right;
+    height: 90vh;
+}
+.restdetail{
+    width: 100%;
+    height: 40%;
+}
+.infodetail{
+    font-weight: 600;
+    background-color: black;
+    width:60%;
+}
+.infotag{
+    background-color: black;
+    display: inline;
+}
+
+
+
+
+input{
+    width: 100%;
+    color: white;
+    outline: 0;
+    border-width: 0 0 2px;
+}
+/* taxi detail */
+.cab{
+    width:47%;
+    height: 100%;
+    background-color: black !important; 
+    box-shadow: 0px 0px 40px 0px rgb(233, 165, 39);
+    padding: 4px;
+    display: inline;
+    margin-right: 4%;
+    float: left;
+    font-size: 1.3rem;
+    overflow: hidden;
+}
+.cab div,.res div {
+    margin-left: 2px;
+    padding: 2px;
+}
+.cab div input,.res div input{
+    outline: none;
+    width: 80%;
+    cursor:default;
+
+}
+
+.taxititle h2,.restauranttitle h2{
+    margin: 2%;
+    margin-left: 27%;
+    padding: 1px;
+}
+.res div input{
+    width: 60%;
+}
+
+ 
+/* restauarant detail */
+.res{
+    width:47%;
+    height: 100%;
+    background-color: black !important; 
+    box-shadow: 0px 0px 40px 0px rgb(233, 165, 39);
+    padding: 4px;
+    display: inline-block;
+    margin-right: 4%;
+    font-size: 1.3rem;
+}
+
+
+
+
+
+/* movie ticket */
+.movieDetails {
+    width:25%;
+    height:90vh;
+    float: left;
+    font-size: 1.3rem;
+    border: none !important;
+    box-shadow: 0px 0px 40px 0px rgb(233, 165, 39);
+
+}
+
+.movie-img{
+    padding:2%;
+    height: 40%;
+}
+
+
+main {
+    padding:2%;
+    display: inline;
+    color: rgb(243, 160, 5);
+}
+.movietitle input{
+    text-align: center;
+    font-size: 1.7rem;
+    width: 100%;
+    color: rgb(233, 165, 39);
+}
+.movie-body div input{
+    outline: none;
+    cursor:default;
+}
+.movie-body div{
+    margin-top:2%;
+    margin-bottom:2%;
+}
+
+
+
+/* payment form */
+.paymentForm {
+    height: 50%;
+    width: 98%;
+    padding-left:3%;
+    padding-right:3%;
+    padding-top:3%;
+
+    margin-top: 6%;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 40px 0px rgb(233, 165, 39);
+}
+.paymentForm h1{
+    display: inline;
+    margin-left: 2%;
+    padding: 1px;
+    margin-bottom: 4%;
+}
+#totalamount{
+    display: inline !important;
+}
+#totalamount p{
+    display: inline !important;
+    font-size: 2rem;
+    margin-left: 42%;
+}
+#totalamount input{
+    outline: none;
+    width: 20%;
+}
+.paymentForm p {
+    margin: 2%;
+    font-size: 1.4rem;
+    width: 100%;
+}
+.paymentForm p input{
+    width: 60%;
+    display: inline-block;
+    background-color: black;
+    color: rgb(243, 160, 5);
+}
+.paymentForm p input::selection{
+    background-color: black;
+    color: rgb(243, 160, 5);
+}
+
+.paymentBtn button {
+
+    width:100%;
+    padding:1%;
+    font-weight: 800;
+    color: black;
+    background-color: rgb(243, 160, 5);
+    font-size: 1.5rem;
+    text-align: center !important;
+    
+}
+.paymentBtn{
+  margin-top: 1%;
+
+}
+.paymentBtn button:hover{
+    cursor: pointer;
+    background-color: green;
+}
+#payNow{
+    display: none;
+}
+
+
+select{
+    color:grey;
+    background-color: rgb(50, 50, 50);
+}
+input[type="date"]{
+    color: grey;
+}
+input:focus{
+    outline: 1px solid rgb(243, 160, 5);
+}

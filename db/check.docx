@@ -1,0 +1,212 @@
+const mongoose = require('mongoose');
+const validator=require('validator');
+
+const movieSchema = new mongoose.Schema({
+    moviename: String,
+    image: String,
+    date: String,
+    url: String,
+    movieInfo: String,
+    trailer:String,
+    seats:[
+    {
+        A1: Number,
+        A2: Number,
+        A3: Number,
+        A4: Number,
+        A5: Number,
+        A6: Number,
+        A7: Number,
+        A8: Number,
+        A9: Number,
+        A10: Number,
+        A11: Number,
+        A12: Number,
+        B1: Number,
+        B2: Number,
+        B3: Number,
+        B4: Number,
+        B5: Number,
+        B6: Number,
+        B9: Number,
+        B7: Number,
+        B8: Number,
+        B10: Number,
+        B11: Number,
+        B12: Number,
+
+        C1: Number,
+        C2: Number,
+        C3: Number,
+        C4: Number,
+        C5: Number,
+        C6: Number,
+        C7: Number,
+        C8: Number,
+        C9: Number,
+        C10: Number,
+        C11: Number,
+        C12: Number,
+
+        D1: Number,
+        D2: Number,
+        D3: Number,
+        D4: Number,
+        D5: Number,
+        D6: Number,
+        D7: Number,
+        D8: Number,
+        D9: Number,
+        D10: Number,
+        D11: Number,
+        D12: Number,
+        E1: Number,
+        E2: Number,
+        E3: Number,
+        E4: Number,
+        E5: Number,
+        E6: Number,
+        E7: Number,
+        E8: Number,
+        E9: Number,
+        E10: Number,
+        E11: Number,
+        E12: Number,
+        F1: Number,
+        F2: Number,
+        F3: Number,
+        F4: Number,
+        F5: Number,
+        F6: Number,
+        F7: Number,
+        F8: Number,
+        F9: Number,
+        F10: Number,
+        F11: Number,
+        F12: Number,
+        G1: Number,
+        G2: Number,
+        G3: Number,
+        G4: Number,
+        G5: Number,
+        G6: Number,
+        G7: Number,
+        G8: Number,
+        G9: Number,
+        G10: Number,
+        G11: Number,
+        G12: Number,
+        H1: Number,
+        H2: Number,
+        H3: Number,
+        H4: Number,
+        H5: Number,
+        H6: Number,
+        H7: Number,
+        H8: Number,
+        H9: Number,
+        H10: Number,
+        H11: Number,
+        H12: Number,
+        I1: Number,
+        I2: Number,
+        I3: Number,
+        I4: Number,
+        I5: Number,
+        I6: Number,
+        I7: Number,
+        I8: Number,
+        I9: Number,
+        I10: Number,
+        I11: Number,
+        I12: Number,
+        J1: Number,
+        J2: Number,
+        J3: Number,
+        J4: Number,
+        J5: Number,
+        J6: Number,
+        J7: Number,
+        J8: Number,
+        J9: Number,
+        J10: Number,
+        J11: Number,
+        J12: Number
+
+    }],
+    venue:[
+        {
+            city:String,
+            time:[]
+        }
+    ]
+})
+const customerSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+   
+    email: {
+        type: String,
+        required: true,
+        validate(value) {
+            if (!validator.isEmail(value)) {
+                throw new Error("Invalid email");
+            }
+        }
+    },
+    moviename:{
+        type :String
+    },
+    amount:{
+        type: Number
+    },
+    selSeat:{
+        type: String
+    },
+    phone:{
+        type: Number,
+        required:true,
+    
+    },
+    venue:String,
+    time:String,
+    date:String,
+    cabtype:String,
+    from:String,
+    to:String,
+    cabtime:String,
+    cabcost:String,
+    resvenue:String,
+    restime:String,
+    nperson:Number,
+    totalcost:Number,
+
+
+
+    
+})
+const upcomingmovieSchema = new mongoose.Schema({
+    moviename: String,
+    image: String,
+    date: String,
+    url: String,
+    movieInfo: String,
+    trailer:String,
+    
+   
+})
+
+
+
+//now we need to create a collections
+
+
+const movie = mongoose.model("Movie", movieSchema);
+const upmovie = mongoose.model("Upmovie", upcomingmovieSchema);
+
+const customer=mongoose.model("Customer",customerSchema);
+
+
+module.exports = {movie,customer,upmovie};

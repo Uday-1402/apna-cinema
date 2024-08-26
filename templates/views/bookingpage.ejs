@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Tickets</title>
+        <link rel="shortcut icon" href="/static/pic/logo/AC favi logo.png" type="image/x-icon">
+        <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/bookingpage.css" />
+
+
+</head>
+
+<body>
+
+        <header>
+                <%- include("../partials/navbar.ejs") %>
+        </header>
+        <main>
+                <div class="trailer">
+
+                        <iframe width="95%" height="500vh" src="https://www.youtube.com/embed/<%=moviedata.trailer%>"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+
+                </div>
+                <div class="seat">
+
+                        <div class="selectSection">
+                                <select class="form-select" id="place" aria-label="Default select example" required>
+                                        <option selected>Select Place</option>
+                                        <% for(var i=0;i<moviedata.venue.length;i++){ %>
+                                                <option value="<%=moviedata.venue[i].city%>">
+                                                        <%=moviedata.venue[i].city%>
+                                                </option>
+                                                <%}%>
+                                </select>
+
+
+                                <select class="form-select" id="date" aria-label="Default select example" required>
+                                        <option selected>Select Date</option>
+                                        <option value="12/07/2023">02/05/2024</option>
+                                        <option value="13/07/2023">03/05/2024</option>
+                                        <option value="14/07/2023">04/05/2024</option>
+                                        <option value="15/07/2023">05/05/2024</option>
+
+                                </select>
+                                <select class="form-select" id="time" aria-label="Default select example" required>
+                                        <option selected>Select Time</option>
+                                        <option value="11:30">10:30</option>
+                                        <option value="12:30">12:30</option>
+                                        <option value="16:30">16:30</option>
+                                        <option value="19:30">19:30</option>
+
+                                </select>
+
+
+                                <div class="seatInfo">
+                                        <div class="seatType">
+                                                <img src="/static/pic/seat/seat.png" alt="">
+                                                <h2>Available</h2>
+
+                                        </div>
+                                        <div class="seatType">
+                                                <img src="/static/pic/seat/selected.png" alt="">
+                                                <h2>Selected</h2>
+
+                                        </div>
+                                        <div class="seatType">
+
+                                                <img src="/static/pic/seat/booked.png" alt="">
+                                                <h2>Booked</h2>
+                                        </div>
+
+
+                                </div>
+                                <div class="seats">
+                                        <table class="table table-borderless">
+
+                                                <tbody>
+                                                        <tr class="serialNo">
+                                                                <th scope="row"></th>
+                                                                <td>1</td>
+                                                                <td>2</td>
+                                                                <td>3</td>
+                                                                <td>4</td>
+                                                                <td>5</td>
+                                                                <td>6</td>
+                                                                <td class="stair"></td>
+                                                                <td>7</td>
+                                                                <td>8</td>
+                                                                <td>9</td>
+                                                                <td>10</td>
+                                                                <td>11</td>
+                                                                <td>12</td>
+                                                        </tr>
+                                                        <tr>
+
+                                                                <th scope="row">J</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="J12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row">I</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="I12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row">H</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="H12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row">G</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="G12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row">F</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="F12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row">E</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="E12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row">D</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="D12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row">C</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="C12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                                <th scope="row">B</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="B12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+                                                        <tr>
+                                                                <th scope="row">A</th>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A1" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A2" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A3" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A4" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A5" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A6" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td class="stair"></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A7" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A8" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A9" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A10" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A11" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+                                                                <td><img class="seatImage" onclick="select(this)"
+                                                                                id="A12" src="/static/pic/seat/seat.png"
+                                                                                alt=""></td>
+
+                                                        </tr>
+
+                                                </tbody>
+
+                                        </table>
+                                        <img class="screenImage" src="/static/pic/seat/screen.png" alt="">
+                                </div>
+                        </div>
+                        <div id="allInfo">
+                                <div class="seatDetail">
+                                        <div id="selseatno">
+                                                <p>Seat Info</p>
+                                        </div>
+                                        <p id="selseatNum"></p>
+                                        <div id="paymentInfo">
+                                                <p>Total (INR)</p>
+                                                <p id="totalCost"> </p>
+
+                                        </div>
+
+                                </div>
+                                <div class="payBtn">
+                                        <a href="/<%=moviedata.url%>/cab" onclick="pay()" class=""><img
+                                                        src="/static/pic/seat/playbtn.png" id="payImage" alt=""></a>
+                                </div>
+                        </div>
+
+
+                </div>
+
+                </div>
+
+                </div>
+        </main>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+
+
+</body>
+<script>
+        window.onload = display();
+        function display() {
+                var obj =<%=moviedata.seats%>;
+                var seatsss = obj;
+                var img = document.getElementsByClassName("seatImage");
+                for (var i = 0; i < img.length - 1; i++) {
+                        var ide = (img[i].id);
+                        if (seatsss[ide] == 0) {
+                                img[i].src = "/static/pic/seat/seat.png";
+                        }
+                        else if (seatsss[ide] == 1) {
+                                img[i].src = "/static/pic/seat/selected.png";
+                        }
+                        else {
+                                img[i].src = "/static/pic/seat/booked.png";
+                        }
+                }
+        }
+        var obj = [];
+        var selseat = 0;
+        var cost = 0;
+        function select(element) {
+                var seatsrc = element.src;
+                seatsrc = seatsrc.slice(21)
+                if (seatsrc === "/static/pic/seat/seat.png") {
+                        selseat = selseat + 1;
+                        element.src = "/static/pic/seat/selected.png";
+                        if (selseat != 0) {
+                                document.getElementById("allInfo").style.display = "block";
+
+                        }
+                        var amount = document.getElementById('totalCost');
+                        cost = selseat * 300;
+                        amount.innerHTML = cost;
+                        obj.push(element.id);
+                }
+                else if (seatsrc === "/static/pic/seat/selected.png") {
+
+                        selseat = selseat - 1;
+                        element.src = "/static/pic/seat/seat.png";
+                        var amount = document.getElementById('totalCost');
+                        cost = selseat * 300;
+                        amount.innerHTML = cost;
+                        obj.splice(obj.indexOf(element.id));
+
+                }
+                var info = document.getElementById('selseatNum')
+                var seatinfo = JSON.stringify(obj);
+                seatinfo = JSON.parse(seatinfo)
+                seatinfo = Object.values(seatinfo).toLocaleString();
+                seatinfo = seatinfo.replaceAll(',', ' ');
+                info.innerHTML = seatinfo;
+                if (selseat == 0) {
+                        document.getElementById("allInfo").style.display = "none";
+                }
+
+        }
+
+        function pay() {
+                var place = document.getElementById("place").value;
+                var time = document.getElementById("time").value;
+                var date = document.getElementById("date").value;
+
+                sessionStorage.setItem('selectedSeat', JSON.stringify(obj));
+                sessionStorage.setItem('amount', JSON.stringify(cost));
+                sessionStorage.setItem('place', JSON.stringify(place));
+                sessionStorage.setItem('time', JSON.stringify(time));
+                sessionStorage.setItem('date', JSON.stringify(date));
+
+
+                window.location.href = "/paymentpage.ejs"
+
+        }
+        function scrl(element) {
+                window.scrollTo(0, 2080);
+        }
+        function scrol(element) {
+                window.scrollTo(0, 750);
+        }
+        $('body').append('<div style="" id="loadingDiv"><div class="loader"></div></div>');
+        setTimeout(() => { removeLoader(); }, 1000)
+        function removeLoader() {
+                document.getElementById('loadingDiv').remove();
+
+        }
+        function removeInfo() {
+                var box = document.getElementById("allInfo");
+                box.removeChild(box.firstElementChild);
+                box.removeChild(box.firstElementChild);
+
+        }
+</script>
+
+</html>

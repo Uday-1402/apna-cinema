@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="shortcut icon" href="/static/pic/logo/AC favi logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/ticket.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <!-- {{!-- navbar section start --}} -->
+    <header>
+        <%- include("../partials/navbar.ejs") %>
+    </header>
+
+
+    <!-- {{!-- main content start --}} -->
+    <main>
+        <div class="row">
+
+            <% ticketdata.forEach(function(customer){ %>
+
+
+                <div class="ticket ">
+                    <div class="ticketimg">
+
+                        <img class="card-img-top" src="/static/pic/logo/ticketlogo.png" alt="Card image cap">
+                    </div>
+
+                    <div class="ticketbody">
+                        <p class="title infop name">
+                            <%=customer.name%>
+                        </p>
+                        <div class="info">
+                            <label>Movie name :</label>
+                            <input type="text" class="infop" value="<%=customer.moviename%>" >
+                        </div>
+                        <div class="info">
+                            <label>Date :</label>
+                            <input type="text" class="infop" style="width:20%" value="<%=customer.date%>">
+                        </div>
+                        <div class="info">
+                            <label>Time :</label>
+                            <input type="text" class="infop" style="width:24% ;" value="<%=customer.time%>">
+                        </div>
+                        <div class="info">
+
+                            <label>Venue :</label>
+                            <input type="text" class="infop" value="<%=customer.venue%>" style="width:28%">
+                        </div>
+                        <div class="info">
+                            <label>Seat :</label>
+                            <input type="text" class="infop" style="width:40% ;" value="<%=customer.selSeat%>">
+                        </div>
+                        
+                        <!-- //cab details -->
+                        <p class="title cab-name">
+                            Cab details
+                        </p>
+                        <div class="info">
+
+                            <label>From :</label>
+                            <input type="text" class="infop" style="width:45%"
+                            value="<%=customer.from%>">
+                        </div>
+                        <div class="info">
+                            <label>To :</label>
+                            <input type="text" class="infop"style="width:40%"
+                            value="<%=customer.to%>">
+                        </div>
+                        <div class="info">
+                            <label>Time :</label>
+                            <input type="text" class="infop"style="width:45% ;"
+                            value="<%=customer.cabtime%>">
+                        </div>
+                        <div class="info">
+                            <label>Vehicle :</label>
+                            <input type="text" class="infop" style="width:26.5% ;"value="<%=customer.cabtype%>">
+                        </div>
+
+                        <!-- //restaurant details -->
+                        <p class="title cab-name">
+                            Restaurant details
+                        </p>
+                        <div class="info">
+
+                            <label>Venue :</label>
+                            <input type="text" class="infop" style="width:45%"value="<%=customer.resvenue%>">
+                        </div>
+                        
+                        <div class="info">
+                            <label>Time :</label>
+                            <input type="text" class="infop"style="width:35% ;" value="<%=customer.restime%>">
+                        </div>
+                        <div class="info">
+                            <label>Persons :</label>
+                            <input type="text" class="infop" style="width:26.5% ;"value="<%=customer.nperson%>">
+                        </div>
+                        <!-- //total amount -->
+                        <p class="title cab-name" style="font-weight: 800;">
+                            Total Amount: <%=customer.totalcost%>
+                        </p>
+                        
+                       
+                        
+                        
+                </div>
+
+
+        </div>
+        <%})%>
+
+
+            </div>
+    </main>
+    <!-- {{!-- main content end --}} -->
+
+    <!-- {{!-- footer start --}} -->
+    <%- include("../partials/footer.ejs") %>
+        <!-- {{!-- footer end --}} -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+<script>
+
+    function scrl(element) {
+        window.scrollTo(0, 2080);
+    }
+    function scrol(element) {
+        window.scrollTo(0, 750);
+    }
+
+
+
+</script>
+
+</html>

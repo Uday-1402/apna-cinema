@@ -1,0 +1,170 @@
+* {
+  margin: none;
+  border: none;
+  background-color: black;
+}
+
+.fullnavbar {
+  z-index: 1100;
+  width: 100% !important;
+  background-color: black;
+  position: fixed !important;
+  top: 0 !important;
+}
+
+
+
+/*footer*/
+.site-footer {
+  color: rgb(233, 165, 39);
+}
+
+.container {
+  margin: 2%;
+}
+
+.fa {
+  color: rgb(233, 165, 39);
+  margin-right: 8%;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+#twittericon:hover {
+  color: #00aced;
+
+}
+
+#instagramicon:hover {
+  color: rgb(202, 14, 139);
+
+}
+
+#youtubeicon:hover {
+  color: rgb(255, 4, 4);
+
+}
+
+#facebookicon:hover {
+  color: whitesmoke;
+
+}
+
+body {
+  margin-top: 7%;
+  background-color: black;
+
+}
+
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+
+footer {
+  margin-top: auto;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 650px;
+}
+
+.site-footer {
+  position: relative;
+  bottom: 0;
+}
+
+
+.ticket {
+  margin: 7%;
+  color: rgb(233, 165, 39);
+  width: 85%;
+  height: 50vh;
+  font-size: 1rem;
+  background-color: black;
+  background-image: url("/static/pic/logo/ticket.png");
+  background-size:100% 100% ;
+  background-repeat: no-repeat;
+  border: none;
+}
+.ticketimg{
+  background-color: transparent ;
+  display: inline;
+
+}
+.ticketimg img{
+  width: 20%;
+  height: 70%;
+  margin-left: 6%;
+  margin-top: 4%;
+
+  background-color: black;
+  display: inline;
+ 
+}
+.ticketbody{
+  float: right;
+  display: inline;
+  margin-top: 3%;
+  margin-left: 1%;
+  margin-right: 3%;
+
+  height: 70% !important;
+  width: 70% !important;
+  background-color: transparent;
+}
+
+.ticketbody div{
+  width: 20%;
+  display: inline;
+  padding-bottom: 2%;
+  background-color: transparent !important;
+
+
+}
+label,
+.infop {
+  display: inline;
+  color: black;
+  background-color: transparent;
+  font-weight: 500;
+
+}
+.name{
+  font-size: 1.6rem;
+  font-weight: 800;
+
+  height: 8%;
+  display: block;
+  background-color: transparent;
+  color: black;
+
+}
+
+.cab-name{
+  font-size: 1.4rem;
+  font-weight: 600;
+margin-top: 0.5%;
+  height: 6%;
+  display: block;
+  background-color: transparent;
+  color: black;
+}
+.infop{
+  font-weight: 800;
+
+
+}
+.info input{
+  margin-right: 2%;
+
+}
+
+
+
+
